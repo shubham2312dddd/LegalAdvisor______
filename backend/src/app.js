@@ -31,7 +31,7 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use(express.static(path.join(__dirname, '../../dist')));
 
 // If no API route matched, serve React app (index.html)
-app.get('*', (req, res) => {
+app.use((req, res) => {
 	res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
 });
 
