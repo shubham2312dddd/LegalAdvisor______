@@ -8,6 +8,7 @@ const postRoutes = require('./routes/postRoutes');
 const appointmentRoutes = require('./routes/appointmentRoutes');
 const aiRoutes = require('./routes/aiRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
+const fileRoutes = require('./routes/fileRoutes');
 const { errorHandler } = require('./middleware/errorMiddleware');
 const path = require('path');
 
@@ -23,6 +24,7 @@ app.use('/api/posts', postRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/uploads', uploadRoutes);
+app.use('/api/files', fileRoutes);
 
 // Serve uploaded files statically
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
